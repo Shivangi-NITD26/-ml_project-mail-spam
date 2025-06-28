@@ -15,7 +15,7 @@ def load_model():
         return None, None
 
 def main():
-    st.title("📧 Email Spam Detector")
+    st.title("EMAIL SPAM DETECTOR")
     st.write("Enter an email message below to check whether it's spam or not.")
 
     model, vectorizer = load_model()
@@ -34,9 +34,9 @@ def main():
                     ham_score = prediction[1]
 
                     if spam_score > 0.5:
-                        st.error(f"🚨 Spam detected! Confidence: {spam_score * 100:.1f}%")
+                        st.error(f"Spam detected! Confidence: {spam_score * 100:.1f}%")
                     else:
-                        st.success(f"✅ Not spam. Confidence: {ham_score * 100:.1f}%")
+                        st.success(f"Not spam. Confidence: {ham_score * 100:.1f}%")
 
                     st.progress(spam_score)
 
